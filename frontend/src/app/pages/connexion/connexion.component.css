@@ -1,0 +1,59 @@
+html,body{
+  height: 100%;
+}
+
+section{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form-cont{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-40%);
+  box-shadow: 1px 1px 8px #757171;
+}
+
+.is-invalid {
+  border: 2px solid red !important;
+}
+.is-valid {
+  border: 2px solid green !important;
+}
+
+input:focus{
+  box-shadow: none;
+  outline: none;
+}
+
+form{
+  width: 370px;
+  background-color: #f1f1f1;
+}
+
+a{
+  text-decoration: none;
+}
+
+.inscription:hover{
+  background-color: rgb(25, 135, 84);
+  color: white;
+  border: black;
+}
+.link-light:hover{
+  text-decoration: underline;
+}
+

@@ -1,0 +1,34 @@
+nav{
+  box-shadow: 0 2px 3px 1px rgba(16, 5, 5, 0.3);
+}
+.navbar .nav-link {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+.navbar .nav-link.active-link {
+  color: #157347;
+}
+
+.navbar .nav-link.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #157347;
+}
+
+.navbtn{
+  all: unset;
+  font-weight: 600!important;
+  margin-top: -50px!important;
+  font-size: 1.2rem;
+}
+.navbtn:hover{
+  cursor: pointer!important;
+}
+
+

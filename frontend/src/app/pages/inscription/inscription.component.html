@@ -1,0 +1,116 @@
+<section>
+  <img src="/assets/img_login.jpg" alt="">
+
+      <div class="form-container container rounded-2 px-2 py-3 ">
+        <div class="text-center">
+          <h1 class="fw-bold fs-2">Creer un compte</h1>
+          <h5 style="color: rgba(0,0,0,0.7)">C'est simple et rapide</h5>
+        </div>
+        <hr>
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+
+          <div  class="fullname row">
+              <!--  Champ prenom-->
+            <div  class=" col-12 col-md-6 mb-1 pe-md-1">
+              <input placeholder="Prenom" class="form-control " type="text" name="firstName" id="firstName" formControlName="firstName"
+                     [ngClass]="{
+      'is-invalid': firstName?.touched && firstName?.invalid,
+      'is-valid': firstName?.touched && firstName?.valid
+    }"
+      >
+              <div *ngIf="firstName?.touched && firstName?.invalid" class="text-danger">
+                <small *ngIf="firstName?.errors?.['required']">Le prénom est requis.</small>
+                <small *ngIf="firstName?.errors?.['minlength']">Le prénom doit avoir au moins 2 caractères.</small>
+              </div>
+            </div>
+            <!--  Champ nom-->
+            <div class="col-12 col-md-6 mb-1 ps-md-1">
+              <input placeholder="Nom" class="form-control" type="text" name="nom" formControlName="lastName"
+                     [ngClass]="{
+      'is-invalid': lastName?.touched && lastName?.invalid,
+      'is-valid': lastName?.touched && lastName?.valid
+    }"
+              >
+
+              <div *ngIf="lastName?.touched && lastName?.invalid" class="text-danger">
+                <small *ngIf="lastName?.errors?.['required']">Le nom est requis.</small>
+                <small *ngIf="lastName?.errors?.['minlength']">Le nom doit avoir au moins 2 caractères.</small>
+              </div>
+            </div>
+          </div>
+          <!--  Champ username-->
+          <div class="row">
+            <div class="col-12 col-md-6 mb-1 pe-md-1">
+              <input class="form-control" placeholder="Nom d'utilisateur" type="text" name="username"
+                     formControlName="username"
+                     [ngClass]="{
+      'is-invalid': username?.touched && username?.invalid,
+      'is-valid': username?.touched && username?.valid
+    }"
+              >
+
+              <div *ngIf="username?.touched && username?.invalid" class="text-danger">
+                <small *ngIf="username?.errors?.['required']">Le nom d'utilisateur est requis.</small>
+                <small *ngIf="username?.errors?.['minlength']">Le nom d'utilisateur doit avoir au moins 2 caractères.</small>
+                <small *ngIf="username?.errors?.['usernameTaken']">Nom d'utilisateur deja existant.</small>
+              </div>
+            </div>
+            <!--  Champ email-->
+            <div class="col-12 col-md-6 mb-1 ps-md-1">
+              <input class="form-control" placeholder="email" type="email" name="email" formControlName="email"
+                     [ngClass]="{
+      'is-invalid': email?.touched && email?.invalid,
+      'is-valid': email?.touched && email?.valid
+    }"
+              >
+
+              <div *ngIf="email?.touched && email?.invalid" class="text-danger">
+                <small *ngIf="email?.errors?.['required']">L'email est requis.</small>
+                <small *ngIf="email?.errors?.['minlength']">L'email avoir au moins 2 caractères.</small>
+                <small *ngIf="email?.errors?.['emailTaken']">email deja existant.</small>
+              </div>
+            </div>
+          </div>
+          <!--  Champ password-->
+          <div class=" mb-1">
+            <input class="form-control" placeholder="Mot de passe" type="password" name="password"
+                   formControlName="password"
+                   [ngClass]="{
+      'is-invalid': password?.touched && password?.invalid,
+      'is-valid': password?.touched && password?.valid
+    }"
+            >
+
+            <div *ngIf="password?.touched && password?.invalid" class="text-danger">
+              <small *ngIf="password?.errors?.['required']">Le mot de passe est requis.</small>
+              <small *ngIf="password?.errors?.['minlength']">Le mot de passe doit avoir au moins 8 caractères.</small>
+              <small *ngIf="password?.errors?.['maxlength']">Le mot de passe ne doit pas dépasser 20 caractères.</small>
+            </div>
+          </div>
+          <!--  Champ confirm password-->
+          <div class="">
+            <input
+              class="form-control mb-1"
+              placeholder="confirmation du mot de passe"
+              type="password"
+              formControlName="confirmPassword"
+              id="confirmPassword">
+            <div *ngIf="confirmPassword?.touched && (confirmPassword?.invalid || formGroup?.errors?.['mismatch'])" class="text-danger">
+              <small *ngIf="confirmPassword?.errors?.['required']">La confirmation du mot de passe est requise.</small>
+              <small *ngIf="formGroup?.errors?.['mismatch']">Les mots de passe ne correspondent pas.</small>
+            </div>
+          </div>
+          <!--  Champ boutons-->
+          <div class="d-flex flex-column w-100 align-items-center">
+            <button style="width: 60%;" class="btn btn-success my-2" type="submit" [disabled]="isSubmitting">
+              {{ isSubmitting ? 'Création en cours...' : 'Créer mon compte' }}
+            </button>
+            <button class="fs-5 my-1 text-primary btn-unset"  (click)="navigateSignIn()" >Vous avez deja un compte?</button>
+          </div>
+        </form>
+
+      </div>
+
+</section>
+
+

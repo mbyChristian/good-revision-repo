@@ -1,0 +1,16 @@
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between mb-2">
+    <h2 style="font-weight: 600" class="text-start">Nouveautés sur le site</h2>
+    <a style="all: unset;" routerLink="/subjects" routerLinkActive="active-link" type="button" class="text-success plus me-2 fs-5" >
+      Voir tout
+    </a>
+  </div>
+  <div class="d-flex align-items-stretch flex-nowrap overflow-auto">
+    <app-subject-representetion
+      *ngFor="let sujet of reversedSubjects"
+      [sujet]="sujet"
+      (download)="onDownload(sujet)">
+    </app-subject-representetion>
+  </div>
+</div>

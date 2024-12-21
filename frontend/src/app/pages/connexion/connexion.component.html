@@ -1,0 +1,55 @@
+
+<section>
+  <img class="img-fluid" src="/assets/img_login.jpg" alt="">
+  <div class="container">
+      <div class="form-cont">
+        <form class="shadow py-4 px-2 border-1 rounded-2" [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+          <h4 class="text-center mb-4 fw-bold">Se connecter a Good Revision</h4>
+          <!--  message d'erreur de connexion  -->
+          <div  *ngIf="loginFailed"  class="alert alert-danger " >Nom d'utilisateur ou mot de passe incorrect</div>
+          <!--  champ username  -->
+          <div class="">
+            <input style="height: 45px" placeholder="Nom d'utilisateur" class="form-control mb-1" type="text" name="username" formControlName="username"
+                   [ngClass]="{
+      'is-invalid': username?.touched && username?.invalid,
+      'is-valid': username?.touched && username?.valid
+      }"
+            >
+            <div *ngIf="username?.touched && username?.invalid" class="text-danger">
+              <small *ngIf="username?.errors?.['required']" class="text-danger">Ce champs est requis</small>
+            </div>
+          </div>
+          <div class="">
+            <!--  champ password  -->
+            <input style="height: 45px" class="form-control mb-1" placeholder="Mot de passe" type="password" name="password" formControlName="password"
+                   [ngClass]="{
+      'is-invalid': password?.touched && password?.invalid,
+      'is-valid': password?.touched && password?.valid
+      }"
+            >
+            <div *ngIf="password?.touched && password?.invalid" class="text-danger">
+              <small *ngIf="password?.errors?.['required']" class="text-danger">Ce champs est requis</small>
+            </div>
+          </div>
+          <div class="fs-6 d-flex justify-content-between">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="remember">
+              <label  class="form-check-label">Se souvenir</label>
+            </div>
+            <p><a class="" href="#">Mot de passe oublié ?</a></p>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-success " type="submit">Se connecter</button>
+<!--            <button class="btn btn-success" type="submit" [disabled]="isSubmitting">-->
+<!--              <span *ngIf="!isSubmitting">Se connecter</span>-->
+<!--              <span *ngIf="isSubmitting">Connexion en cours...</span>-->
+<!--            </button>-->
+            <button type="button" (click)="navigateRegister()" class="inscription btn btn-light">Inscription</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+</section>
+
+

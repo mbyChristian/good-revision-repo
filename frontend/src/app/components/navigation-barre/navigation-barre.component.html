@@ -1,0 +1,72 @@
+
+<nav class="navbar navbar-expand-md bg-body-secondary fixed-top">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler me-2"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand " routerLink="/home">
+      <img width="100px" height="50px" src="/assets/logo.png" alt="Logo">
+    </a>
+
+    <div class="">
+
+      <ng-container  *ngIf="!isConnected">
+        <ul style="font-size: 1rem; " class="navbar-nav flex-row">
+          <li>
+            <a style="text-decoration: none; color: black" routerLink="/login">Connexion/</a>
+          </li>
+          <li>
+            <a style="text-decoration: none; color: black" routerLink="/register">Inscription</a>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-container *ngIf="isConnected">
+        <p class="mt-1" style="font-size: 1.4rem">
+          {{ firstName }} {{ lastName }}
+        </p>
+        <div class="btn-group">
+          <button  style="font-weight: 600!important;" type="button" class="navbtn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Mon compte
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Mon profil</a></li>
+            <li><a class="dropdown-item" href="#">Mes favoris</a></li>
+            <li><button class="dropdown-item" (click)="logout()">Déconnexion</button></li>
+          </ul>
+        </div>
+      </ng-container>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start" style="max-width: 300px;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-success" id="offcanvasNavbarLabel">Good Revision</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class=" offcanvas-body">
+        <ul  class="w-100 menu-links navbar-nav justify-content-start align-items-center flex-grow-1">
+          <li  class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active-link" aria-current="page">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/subjects" routerLinkActive="active-link" aria-current="page">Sujets</a>
+          </li>
+          <li  class="nav-item">
+            <a  class="nav-link" routerLink="/a-propos" routerLinkActive="active-link" aria-current="page">À Propos</a>
+          </li>
+          <li *ngIf="isAdmin()" class="nav-item">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active-link" aria-current="page">Dashbord</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

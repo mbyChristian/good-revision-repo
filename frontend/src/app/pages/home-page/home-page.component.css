@@ -1,0 +1,29 @@
+.global-cont{
+  max-width: 1920px;
+  overflow-x: hidden;
+  margin-top: 76px;
+
+}
+img{
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.top-cont{
+  height: 400px;
+  width: 100%;
+
+}
+.welcome-cont{
+  position: absolute;
+  top: 4rem;
+  left: 3rem;
+}
+.welcome{
+  font-weight: 700;
+  color: white;
+}
+.slogan{
+font-weight: 700;
+  width: 280px;
+}

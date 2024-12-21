@@ -1,0 +1,16 @@
+
+<section style="width: 100%; margin-top: 200px;margin-bottom: 50px">
+  <div class="container">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col" *ngFor="let sujet of subjects">
+        <app-subject-representetion
+          [sujet]="sujet"
+          (download)="onDownload(sujet)">
+        </app-subject-representetion>
+      </div>
+    </div>
+  </div>
+  <div class="filer">
+
+  </div>
+</section>

@@ -1,0 +1,19 @@
+//@use '@angular/material' as mat;
+//
+//:root {
+//  @include mat.snack-bar-overrides((
+//    container-color: #4caf50, // Couleur par défaut si non définie
+//    supporting-text-color: white,
+//
+//  ));
+//}
+//.snackbar-success {
+//  @include mat.snack-bar-overrides((
+//    container-color: #4caf50, // Couleur verte pour succès
+//  ));
+//}
+//.snackbar-error {
+//  @include mat.snack-bar-overrides((
+//    container-color: #f44336, // Couleur rouge pour erreur
+//  ));
+//}

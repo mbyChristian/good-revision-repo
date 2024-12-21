@@ -1,0 +1,10 @@
+<div class="search-icon">
+  <i class="fa-solid fa-magnifying-glass" (click)="toggleSearch()"></i>
+</div>
+
+<div class="search-overlay" [class.visible]="searchVisible()">
+  <div class="search-container">
+    <input type="text" placeholder="Rechercher..." [ngModel]="searchTerm" (ngModelChange)="searchTerm.set($event)" (keyup.enter)="handleSearch()" />
+    <button (click)="handleSearch()">Rechercher</button>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+html,body{
+  height: 100%;
+}
+
+section{
+  background-color: #333;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.is-invalid {
+  border: 2px solid red !important;
+}
+.is-valid {
+  border: 2px solid green !important;
+}
+
+/*.error {*/
+/*  color: red;*/
+/*  font-size: 12px;*/
+/*}*/
+
+img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+input:focus{
+  box-shadow: none;
+  outline: none;
+}
+
+input{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.form-container {
+  background-color: #f1f1f1;
+  max-width: 400px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 1px 1px 8px #757171;
+}
+
+.btn-unset{
+  all: unset;
+  color: #f1f1f1;
+}
+.btn-unset:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a{
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+.inscription:hover{
+  background-color: rgb(25, 135, 84);
+  color: white;
+  border: black;
+}
+.link-light:hover{
+  text-decoration: underline;
+}
+@media (max-width: 400px) {
+  /* Appliquer une largeur de 300px aux offcanvas sur les petits écrans */
+  .form-container {
+    max-width: 350px; /* Largeur fixe pour les écrans de 767.98px ou moins */
+  }
+}
