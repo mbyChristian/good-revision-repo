@@ -1,8 +1,10 @@
 # Good Révision Platform
 
-Good Revision is a platform developed with Spring Boot and Angular.
-It aims to facilitate access to old exam papers for students, allowing them to better prepare for their academic assessments.
-The project solves the problem of dispersion of old papers by offering a centralized point for their consultation. Users can search for papers by subject, year, or level, and administrators have the ability to manage the resources available on the platform.
+Good Révision is a platform developed with Spring Boot and Angular.  
+It aims to facilitate access to old exam papers for students, allowing them to better prepare for their academic assessments.  
+The project solves the problem of dispersion of old papers by offering a centralized point for their consultation.  
+Users can search for papers by subject, year, or level, download the papers, and administrators have the ability to manage the resources available on the platform.
+
 ## Table of Contents
 
 - [Frontend Screenshots](#Frontend-Screenshots)
